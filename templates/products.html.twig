@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Product List</title>
+  <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+</head>
+
+<body>
+  <h1>All Products</h1>
+  <ul>
+    {% for product in products %}
+    <li>
+
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <p>Price: ${{ product.Price }}</p>
+      <p>Available: {{ product.StockStatus == true ? 'Available': 'Out of Stock' }}</p>
+    </li>
+    {% else %}
+    <li>No products found.</li>
+    {% endfor %}
+  </ul>
+</body>
+
+</html>
